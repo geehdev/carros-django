@@ -1,0 +1,150 @@
+* Um app é um módulo que é responsável por administrar algo do projeto, podemos criar uma app pra cada funcionalidade do projeto.
+
+🐧 O QUÊ É DJANGO?
+- Framework Web;
+- Para Python feito em Python;
+- Código aberto (open source);
+- Arquitetura MVT (Model, View e Templete);
+- Full Stack;
+
+🐧 O QUÊ PODEMOS FAZER COM DJANGO? 
+- Sites, Blogs, Redes Sociais;
+- Sistemas Web completos;
+- ERPs (Sistema completo pra gerenciar uma empresa);
+- CRMs (Sistema de controle de atendimento);
+- PDVs (Sistema de caixa de supermercado);
+- APIs (DRF).
+
+🐧 Programação Orientada a Objetos (POO):
+🔸 Herança;
+🔸 Polimorfismo de Classe Python;
+🔸 Polimorfismo de interface Python;
+
+
+🐧 DJANGO COMMANDS:
+>> django-admin --help:
+- Mostra alguns comandos do django admin;
+
+>> django-admin startproject <projectname>:
+- Cria a estrutura básica de um projeto Django (App principal, aqui fica o coração do projeto.) e será criado os arquivos:
+
+* manage.py (permite a você interagir com esse projeto Django de várias maneiras.);
+
+* __init__.py (um arquivo vazio que diz ao Python que este diretório deve ser considerado um pacote Python.);
+
+* settings.py (configurações do projeto Django);
+
+* urls.py (as declarações de URLs para este projeto Django);
+
+>> python manage.py runserver:
+- Inicia o servidor local de desenvolvimento (Test);
+
+>> python manage.py startapp <appname>:
+- Cria um diretório de aplicativo/app que será responsável por lidar com uma parte distinta do aplicativo, será criado os arquivos:
+
+* admin.py ();
+* apps.py ();
+* migrations/__init__.py ();
+
+- Após criar a app, devemos sinalizar para o Django a existência dela, iremos na app principal, setting e adicionamos seu nome em INSTALLED_APPS.
+
+>> python manage.py makemigrations:
+- Usado para criar novos arquivos de migração de db com base nas alterações feitas nos models, USAR TODA VEZ QUE FAZER ALTERAÇÕES NOS MODELS.
+
+>> python manage.py migrate:
+- Aplica as migrações de db e sincroniza as tabelas do db com o estado atual de seus models, USADO PARA APLICAR AS ALTERAÇÕES DO MODEL CAPTURADAS POR makemigrations.
+
+>> python manage.py createsuperuser:
+- Criar uma conta de superusuário para a interface de administração do Django. A conta de superusuário tem privilégios administrativos e pode acessar e gerenciar todos os aspectos do site de administração do Django, incluindo o gerenciamento de usuários, grupos, modelos e outros conteúdos do site. 
+
+
+🐧 CONFIGURANDO MODELS NO SITE ADMIN:
+- Aqui deixaremos visível os models em nosso painel de administrador, primeiro iremos no arquivo admin.py de nossa app e registraremos os models que queremos que apareça no nosso site de admin.
+
+- Subscrevemos os metódos list_display e search_fields da herança do admin.ModelAdmin, por fim registramos com a função admin.site.register.
+
+
+🐧 Models & ForeingnKey:
+- ForeingnKey/ChaveEstrangeira é uma restrição SQL e um campo em uma tabela que contém a PrimaryKey/ChavePrimária de outra tabela.
+
+- Usaremos ForeingnKey para ligar os dados de uma tabela em outra, pegamos esses dados e adicionamos no painel de admin, os dados aparece em um listbox (opção de escolha);
+
+- Para mostrar no painel de adm, devemos registrar o model em admin.py.
+
+🐧 ARMAZENANDO IMAGENS DOS CARROS:
+- Cada upload de imagem que o usuário fizer nós salvamos elas em uma pasta no diretório do servidor e no banco de dados salvamos apenas o PATH da imagem.
+
+🐧 VISÃO DE ADMIN VS VISÃO DE USUÁRIO:
+...
+
+🐧 ENTENDENDO URLS E VIEWS:
+...
+
+🐧 REDENRIZANDO TEMPLATES:
+- Devemos criar a pasta templates manualmente dentro da nossa app e usamos a função render para retornar o template.
+
+🐧 LINGUAGEM DE TEMPLATES/MODELS DO DJANGO:
+...
+
+🐧 CONSULTAS NO BANCO DE DADOS COM DJANGO ORM:
+...
+
+🐧 PARÂMETROS DA REQUEST / FAZENDO CONSULTAS COM FILTER():
+...
+
+🐧 CONSULTAS COM ICONTAINS E ORDER_BY EM FILTER():
+...
+
+🐧CONFIGURANDO O BASE TEMPLATE: 
+- Criado diretório "templates" dentro da app principal do projeto e depois vamos em settings.py na constante TEMPLATES e colocamos o path "app/templates" em DIRS.
+
+🐧 FORM NO DJANGO:
+- Usado ModelChoiceField para declarar form com ForeignKey; 
+
+- Objeto do form tem os atributos "as_table";
+- request.POST, request.FILE;
+
+🐧MIGRANDO PARA MODELFORM:
+...
+
+🐧VALIDAÇÕES EM FORMS:
+...
+
+🐧AUTENTICAÇÃO NO DJANGO:
+...
+
+
+🐧 REGISTRANDO USUÁRIOS:
+- Usado form padrão do Django (UserCreationForm) para criar o form de cadastros de usuários;
+
+🐧 CRIANDO A TELA DE LOGIN:
+- Usado Form AuthenticationForm já existente do Django para autenticar login de usuário;
+
+- Usado método authenticate para verificar se o user existe no db, login() e logout();
+
+🐧 CLASS BASED VIEWS (CBVS):
+...
+
+🐧 AUTORIZAÇÃO DAS VIEWS:
+- Limitando acesso atráves das urls;
+- Usado decorators Django para proteger as views, method_decorator e login_required;
+
+🐧 SIGNALS | DJANGO:
+...
+
+🐧 DJANGO E BANCO DE DADOS RELACIONAIS:
+- Instalando PostgreSQL;
+- Criando bando de dados Postgres atráves do prompt psql do Postgres;
+
+
+🐧 DJANGO SHEL:
+>> python manage.py shell;
+
+🐧 GIT / GITHUB / Deploy na AWS / Nginx;
+...
+
+~~ SQL ~~ SQL ~~ SQL ~~ SQL ~~ SQL ~~ SQL ~~ SQL:
+* PRIMARY_KEY = Uma restrição que identifica exclusivamente cada registro adicionado em uma tabela. 
+
+* FOREIGNKEY = É um campo (ou coleção de campos) em uma tabela, que se refere a o PRIMARY KEY de outra table. 
+
